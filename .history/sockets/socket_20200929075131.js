@@ -23,9 +23,9 @@ io.on('connection', client => {
 
     // Escuchar del cliente el mensaje-personal
 
-    client.on('mensaje-personal', async (payload)=>{
+    client.on('mensaje-personal', (payload)=>{
         
-        await grabarMensaje(payload);
+        grabarMensaje
         io.to(payload.para).emit('mensaje-personal',payload);
     })
 
